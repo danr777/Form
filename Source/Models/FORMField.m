@@ -236,10 +236,10 @@ static NSString * const FORMFormatterSelector = @"formatString:reverse:";
     validator = [[validatorClass alloc] initWithValidation:self.validation];
 
     self.validationType = [validator validateFieldValue:self.fieldValue];
-  
-    if (self.validation.compareToFieldID.length) {
-      id dependantFieldValue = [self.class fieldForFieldID:self.validation.compareToFieldID inSection:self.section].fieldValue;
-      self.validationType = [validator validateFieldValue:self.fieldValue withDependentValue:dependantFieldValue withComparator:self.validation.compareRule];
+
+    if (self.validation.comparedFieldID.length) {
+      id dependantFieldValue = [self.class fieldForFieldID:self.validation.comparedFieldID inSection:self.section].fieldValue;
+      self.validationType = [validator validateFieldValue:self.fieldValue withDependentValue:dependantFieldValue withComparator:self.validation.rule];
     }
     self.valid = (self.validationType == FORMValidationResultTypePassed);
     return self.validationType;

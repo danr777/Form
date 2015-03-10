@@ -1,0 +1,35 @@
+[
+  {
+    "id":"group-id",
+    "title":"Group",
+    "sections":[
+      {
+        "id":"section-id",
+        "fields":[
+          {
+            "id":"start_date",
+            "title":"Start date",
+            "type":"date",
+            "size":{
+              "width":30,
+              "height":1
+            },
+            "validations":{
+              "compare":"start_date",
+              "rule":">"
+            }
+          },
+          {
+            "id":"end_date",
+            "title":"End date",
+            "type":"date",
+            "size":{
+              "width":30,
+              "height":1
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

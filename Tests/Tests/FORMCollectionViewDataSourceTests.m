@@ -387,4 +387,26 @@
     XCTAssertNotNil(section);
 }
 
+- (void)testDateValidationWithRule
+{
+    NSArray *JSON = [NSJSONSerialization JSONObjectWithContentsOfFile:@"date_comparison.json"
+                                                             inBundle:[NSBundle bundleForClass:[self class]]];
+
+    FORMDataSource *dataSource = [[FORMDataSource alloc] initWithJSON:JSON
+                                                       collectionView:nil
+                                                               layout:nil
+                                                               values:@{@"start_date" : @"2014-10-31 23:00:00 +00:00",
+                                                                        @"end_date" : @"2017-10-31 23:00:00 +00:00"}
+                                                             disabled:YES];
+    XCTAssertTrue([dataSource formFieldsAreValid]);
+
+    dataSource = [[FORMDataSource alloc] initWithJSON:JSON
+                                       collectionView:nil
+                                               layout:nil
+                                               values:@{@"start_date" : @"2018-10-31 23:00:00 +00:00",
+                                                        @"end_date" : @"2017-10-31 23:00:00 +00:00"}
+                                             disabled:YES];
+    XCTAssertFalse([dataSource formFieldsAreValid]);
+}
+
 @end

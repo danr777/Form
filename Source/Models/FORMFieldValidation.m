@@ -16,14 +16,11 @@
     }
 
     self.maximumLength = [dictionary andy_valueForKey:@"max_length"];
-
     self.format = [dictionary andy_valueForKey:@"format"];
-
     self.minimumValue = [dictionary andy_valueForKey:@"min_value"];
-
     self.maximumValue = [dictionary andy_valueForKey:@"max_value"];
-    self.compareRule = [dictionary andy_valueForKey:@"compare_rule"];
-    self.compareToFieldID = [dictionary andy_valueForKey:@"compare_to"];
+    self.comparedFieldID = [dictionary andy_valueForKey:@"compare"];
+    self.rule = [dictionary andy_valueForKey:@"rule"];
 
     return self;
 }

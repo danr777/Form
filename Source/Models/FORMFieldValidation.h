@@ -9,8 +9,8 @@
 @property (nonatomic, copy) NSString *format;
 @property (nonatomic) NSNumber *minimumValue;
 @property (nonatomic) NSNumber *maximumValue;
-@property (nonatomic) NSString *compareToFieldID;
-@property (nonatomic) NSString *compareRule;
+@property (nonatomic) NSString *comparedFieldID;
+@property (nonatomic) NSString *rule;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary NS_DESIGNATED_INITIALIZER;
 
